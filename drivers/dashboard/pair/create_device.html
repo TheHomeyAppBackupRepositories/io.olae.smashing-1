@@ -1,0 +1,14 @@
+<script type="application/javascript">
+Homey.emit("readyToCreate");
+
+Homey.on("createDevice", function(device) {
+  Homey.createDevice(device)
+  .then(function (result) {
+    Homey.done();
+  })
+  .catch(function (error) {
+    Homey.alert(error);
+  });
+  Homey.done();
+});
+</script>
